@@ -1,7 +1,7 @@
 <body>
     <ul>
-    <?php foreach ($colores as $color) {
-        echo "<li>$color</li>";
+    <?php foreach ($travels as $travel) {
+        echo "<li>$travel[city]</li>";
     } 
     ?>
     </ul>
