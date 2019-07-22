@@ -4,12 +4,14 @@ try {
 }catch (PDOException $e){
     die($e->getMessage());
 }
+//Muestra los campos seleccionados
 $travels = $pdo->prepare('select * from travels');
 $travels->execute();
-var_dump($travels);
-require 'vista.php';
 
-$results=$travels->fetchAll(PDO::FETCH_OBJ);
-var_dump($results);
+
+//muestra un array como un objeto con todos los campos de la tabla
+$results=$travels->fetchAll($pdo::FETCH_OBJ);
+echo var_dump($results);
+require 'vista.php';
 
 ?>
