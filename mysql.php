@@ -10,7 +10,7 @@ $travels->execute();
 
 
 //muestra un array como un objeto con todos los campos de la tabla
-$results=$travels->fetchAll($pdo::FETCH_OBJ);
+$results=$travels->fetchAll($pdo::FETCH_COLUMN, 1);
 echo var_dump($results);
 require 'vista.php';
 

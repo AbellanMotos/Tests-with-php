@@ -1,10 +1,17 @@
 <?php
-    $colores = [
-        "Rojo",
-        "Verde",
-        "Azul",
-        "Amarillo"
-    ];
-    var_dump($colores);
-    require 'vista.php';
+require 'vendor/autoload.php';
+
+/* use Dompdf\Dompdf; */
+use Dompdf\Dompdf;
+
+$dompdf = new Dompdf();
+$dompdf->loadHtml('hello world');
+
+$dompdf->setPaper('A4','landscape');
+
+$dompdf->render();
+
+$dompdf->stream();
+
+
 ?>
